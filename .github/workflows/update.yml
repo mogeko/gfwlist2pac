@@ -33,6 +33,13 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
+      - name: Cache GenPac
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ env.PYTHON_VERSION }}-${{ env.GEN_PAC_VERSION }}
+          restore-keys: ${{ runner.os }}-pip-
+
       - name: Install GenPac
         run: pip install genpac==${{ env.GEN_PAC_VERSION }}
 
@@ -51,6 +58,7 @@ jobs:
           path: ./public
 
   deploy:
+    if: github.ref_name == 'master'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
