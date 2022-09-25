@@ -43,14 +43,12 @@ jobs:
             --gfwlist-url - \
             --gfwlist-local gfwlist.txt \
             -o gfwlist.pac
+          mkdir public && cp gfwlist.{pac,txt} public
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: github-pages
-          path: |
-            ./gfwlist.pac
-            ./gfwlist.txt
+          path: ./public
 
   deploy:
     environment:
