@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 env:
-  PYTHON_VERSION: 3.10
-  GEN_PAC_VERSION: 2.1.0
+  PYTHON_VERSION: "3.10"
+  GEN_PAC_VERSION: "2.1.0"
 
 permissions:
   contents: read
