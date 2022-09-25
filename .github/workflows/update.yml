@@ -1,0 +1,65 @@
+name: Auto Update
+
+on:
+  schedule:
+    - cron: "37 19 * * *"
+  workflow_dispatch:
+
+env:
+  PYTHON_VERSION: 3.10
+  GEN_PAC_VERSION: 2.1.0
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          repository: gfwlist/gfwlist
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: "pip"
+
+      - name: Install GenPac
+        run: pip install genpac==${{ env.GEN_PAC_VERSION }}
+
+      - name: Gen gfwlist.pac
+        run: |
+          genpac \
+            --pac-proxy "SOCKS5 127.0.0.1:1080" \
+            --gfwlist-url - \
+            --gfwlist-local gfwlist.txt \
+            -o gfwlist.pac
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: github-pages
+          path: |
+            ./gfwlist.pac
+            ./gfwlist.txt
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
