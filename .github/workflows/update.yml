@@ -5,10 +5,6 @@ on:
     - cron: "37 19 * * *"
   workflow_dispatch:
 
-env:
-  PYTHON_VERSION: "3.8"
-  GEN_PAC_VERSION: "2.1.0"
-
 permissions:
   contents: read
   pages: write
@@ -21,21 +17,26 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-
+    env:
+      PYTHON_VERSION: "3.8"
+      GEN_PAC_VERSION: "2.1.0"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           repository: gfwlist/gfwlist
-
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: ${{ env.PYTHON_VERSION }}
-
+      - name: Cache GenPac
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ env.PYTHON_VERSION }}-${{ env.GEN_PAC_VERSION }}
+          restore-keys: ${{ runner.os }}-pip-
       - name: Install GenPac
         run: pip install genpac==${{ env.GEN_PAC_VERSION }}
-
       - name: Gen gfwlist.pac
         run: |
           genpac \
@@ -44,13 +45,13 @@ jobs:
             --gfwlist-local gfwlist.txt \
             -o gfwlist.pac
           mkdir public && cp gfwlist.{pac,txt} public
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./public
 
   deploy:
+    if: github.ref_name == 'master'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
