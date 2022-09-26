@@ -18,7 +18,7 @@ Automatically convert [gfwlist.txt](https://raw.githubusercontent.com/gfwlist/gf
 - gfwlist.pac:
   - 压缩后的版本: <https://mogeko.github.io/gfwlist2pac/gfwlist.min.pac>
   - 未压缩的版本: <https://mogeko.github.io/gfwlist2pac/gfwlist.pac>
-- gfwlist.dnsmasq: <https://mogeko.github.io/gfwlist2pac/gfwlist.dnsmasq>
+- gfwlist.dnsmasq.conf: <https://mogeko.github.io/gfwlist2pac/gfwlist.dnsmasq.conf>
 - gfwlist.wingy: <https://mogeko.github.io/gfwlist2pac/gfwlist.wingy>
 
 ## License

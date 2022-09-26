@@ -10,7 +10,7 @@
     "license": "MIT",
     "resources": {
         "gfwlist.decoded.txt": "https://mogeko.github.io/gfwlist2pac/gfwlist.decoded.txt",
-        "gfwlist.dnsmasq": "https://mogeko.github.io/gfwlist2pac/gfwlist.dnsmasq",
+        "gfwlist.dnsmasq.conf": "https://mogeko.github.io/gfwlist2pac/gfwlist.dnsmasq.conf",
         "gfwlist.min.pac": "https://mogeko.github.io/gfwlist2pac/gfwlist.min.pac",
         "gfwlist.pac": "https://mogeko.github.io/gfwlist2pac/gfwlist.pac",
         "gfwlist.txt": "https://mogeko.github.io/gfwlist2pac/gfwlist.txt",
