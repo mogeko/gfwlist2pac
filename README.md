@@ -4,9 +4,9 @@
 [![genpac](https://img.shields.io/pypi/v/genpac?label=genpac)](https://github.com/JinnLynn/genpac)
 [![license](https://img.shields.io/github/license/mogeko/gfwlist2pac)](LICENSE)
 
-Automatically convert [gfwlist.txt](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt) to `gfwlist.pac`, `gfwlist.dnsmasq` and `gfwlist.wingy` everyday.
+Automatically convert [`gfwlist.txt`](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt) to `*.pac`, `*.dnsmasq.conf` and `*.wingy.yml` everyday.
 
-自动将 [`gfwlist.txt` 文件](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt)转换成 `gfwlist.pac`、`gfwlist.dnsmasq`、`gfwlist.wingy` 等文件，每天更新。
+自动将 [`gfwlist.txt` 文件](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt)转换成 `*.pac`、`*.dnsmasq.conf` 和 `*.wingy.yml` 等文件，每天更新。
 
 所使用的 `gfwlist.txt` 文件来自于 [gfwlist/gfwlist](https://github.com/gfwlist/gfwlist)；生成器来自于 [JinnLynn/genpac](https://github.com/JinnLynn/genpac)。
 
