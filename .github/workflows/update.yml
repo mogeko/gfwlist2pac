@@ -17,34 +17,18 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    env:
-      PYTHON_VERSION: "3.8"
-      GEN_PAC_VERSION: "2.1.0"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          repository: gfwlist/gfwlist
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
-      - name: Cache GenPac
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ env.PYTHON_VERSION }}-${{ env.GEN_PAC_VERSION }}
-          restore-keys: ${{ runner.os }}-pip-
-      - name: Install GenPac
-        run: pip install genpac==${{ env.GEN_PAC_VERSION }}
+          python-version: "3.8"
+          cache: "pip"
+      - name: Install genpac
+        run: pip install -r requirements.txt
       - name: Gen gfwlist.pac
-        run: |
-          genpac \
-            --pac-proxy "SOCKS5 127.0.0.1:1080" \
-            --gfwlist-url - \
-            --gfwlist-local gfwlist.txt \
-            -o gfwlist.pac
-          mkdir public && cp gfwlist.{pac,txt} public
+        run: genpac --config-from config.ini
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
