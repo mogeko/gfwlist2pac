@@ -14,6 +14,6 @@
         "gfwlist.min.pac": "https://mogeko.github.io/gfwlist2pac/gfwlist.min.pac",
         "gfwlist.pac": "https://mogeko.github.io/gfwlist2pac/gfwlist.pac",
         "gfwlist.txt": "https://mogeko.github.io/gfwlist2pac/gfwlist.txt",
-        "gfwlist.wingy": "https://mogeko.github.io/gfwlist2pac/gfwlist.wingy"
+        "gfwlist.wingy.yml": "https://mogeko.github.io/gfwlist2pac/gfwlist.wingy.yml"
     }
 }
