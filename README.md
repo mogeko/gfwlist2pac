@@ -6,9 +6,13 @@
 
 Automatically convert [`gfwlist.txt`](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt) to `*.pac`, `*.dnsmasq.conf` and `*.wingy.yml` everyday.
 
-自动将 [`gfwlist.txt` 文件](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt)转换成 `*.pac`、`*.dnsmasq.conf` 和 `*.wingy.yml` 等文件，每天更新。
+自动将 [`gfwlist.txt` 文件](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt)转换成 `*.pac`、`*.dnsmasq.conf` 和 `*.wingy.yml` 等文件，[每天更新](#关于自动更新)。
 
 所使用的 `gfwlist.txt` 文件来自于 [gfwlist/gfwlist](https://github.com/gfwlist/gfwlist)；生成器来自于 [JinnLynn/genpac](https://github.com/JinnLynn/genpac)。
+
+## 关于自动更新
+
+此更新脚本将会在每天的 UTC 时间 16:30 (北京时间 00:30) 左右，通过 [GitHub Action](https://github.com/mogeko/gfwlist2pac/actions/workflows/update.yml) 自动运行；然后将更新后的文件推送到[此仓库](https://github.com/mogeko/gfwlist2pac)对应的 [GitHub Page](https://mogeko.github.io/gfwlist2pac)。
 
 ## Resources
 
