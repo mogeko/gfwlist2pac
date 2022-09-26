@@ -25,10 +25,10 @@ jobs:
         with:
           python-version: "3.8"
           cache: "pip"
-      - name: Install genpac
-        run: pip install -r requirements.txt
+      - name: Install requirements
+        run: make requirements
       - name: Gen gfwlist.pac
-        run: genpac --config-from config.ini
+        run: make genpac
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
