@@ -7,10 +7,10 @@ CONFIG_FILE = config.ini
 all: clean requirements genpac
 
 requirements: $(DEP_FILE)
-	@pip install -r $(DEP_FILE)
+	pip install -r $(DEP_FILE)
 
 genpac: $(CONFIG_FILE)
-	@$(GENPAC_CMD) --config-from $(CONFIG_FILE)
+	$(GENPAC_CMD) --config-from $(CONFIG_FILE)
 
 clean:
 	@rm -rf ./public/gfwlist.*
