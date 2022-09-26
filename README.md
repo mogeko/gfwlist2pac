@@ -8,7 +8,7 @@ Automatically convert [gfwlist.txt](https://raw.githubusercontent.com/gfwlist/gf
 
 自动将 [`gfwlist.txt` 文件](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt)转换成 `gfwlist.pac`、`gfwlist.dnsmasq`、`gfwlist.wingy` 等文件，每天更新。
 
-说使用的 `gfwlist.txt` 文件来自于 [gfwlist/gfwlist](https://github.com/gfwlist/gfwlist)；生成器来自于 [JinnLynn/genpac](https://github.com/JinnLynn/genpac)。
+所使用的 `gfwlist.txt` 文件来自于 [gfwlist/gfwlist](https://github.com/gfwlist/gfwlist)；生成器来自于 [JinnLynn/genpac](https://github.com/JinnLynn/genpac)。
 
 ## Resources
 
