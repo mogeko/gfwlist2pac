@@ -1,7 +1,8 @@
 # gfwlist2pac
 
-[![Auto Update](https://github.com/mogeko/gfwlist2pac/actions/workflows/update.yml/badge.svg)](https://github.com/mogeko/gfwlist2pac/actions/workflows/update.yml)
-[![timestamp](https://img.shields.io/badge/dynamic/json?label=Last%20update%20time&query=%24.timestamp&url=https%3A%2F%2Fmogeko.github.io%2Fgfwlist2pac%2F)](https://mogeko.github.io/gfwlist2pac)
+[![auto_update](https://github.com/mogeko/gfwlist2pac/actions/workflows/update.yml/badge.svg)](https://github.com/mogeko/gfwlist2pac/actions/workflows/update.yml)
+[![timestamp](https://img.shields.io/badge/dynamic/json?color=ff69b4&label=Last%20update%20time&query=%24.timestamp&url=https%3A%2F%2Fmogeko.github.io%2Fgfwlist2pac%2F)](https://mogeko.github.io/gfwlist2pac)
+[![python_version](https://img.shields.io/badge/dynamic/json?color=blue&label=Python&query=%24.env.PYTHON_VERSION&url=https%3A%2F%2Fmogeko.github.io%2Fgfwlist2pac%2F)](https://mogeko.github.io/gfwlist2pac)
 [![license](https://img.shields.io/github/license/mogeko/gfwlist2pac)](LICENSE)
 
 Automatically convert [`gfwlist.txt`](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt) to `*.pac`, `*.dnsmasq.conf` and `*.wingy.yml` everyday.
