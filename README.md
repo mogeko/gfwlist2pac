@@ -1,7 +1,7 @@
 # gfwlist2pac
 
 [![Auto Update](https://github.com/mogeko/gfwlist2pac/actions/workflows/update.yml/badge.svg)](https://github.com/mogeko/gfwlist2pac/actions/workflows/update.yml)
-[![genpac](https://img.shields.io/pypi/v/genpac?label=genpac)](https://github.com/JinnLynn/genpac)
+[![timestamp](https://img.shields.io/badge/dynamic/json?label=Last%20update%20time&query=%24.timestamp&url=https%3A%2F%2Fmogeko.github.io%2Fgfwlist2pac%2F)](https://mogeko.github.io/gfwlist2pac)
 [![license](https://img.shields.io/github/license/mogeko/gfwlist2pac)](LICENSE)
 
 Automatically convert [`gfwlist.txt`](https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt) to `*.pac`, `*.dnsmasq.conf` and `*.wingy.yml` everyday.
