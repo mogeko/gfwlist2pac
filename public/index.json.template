@@ -1,0 +1,24 @@
+{
+    "homepage": "https://github.com/${GITHUB_REPOSITORY}",
+    "author": {
+        "name": "${GITHUB_REPOSITORY_OWNER}",
+        "email": "${AUTHOR_EMAIL}",
+        "github": "https://github.com/${GITHUB_REPOSITORY_OWNER}",
+        "url": "${AUTHOR_URL}"
+    },
+    "license": "${LICENSE}",
+    "resources": {
+        "gfwlist.decoded.txt": "${BASE_URL}/gfwlist.decoded.txt",
+        "gfwlist.dnsmasq.conf": "${BASE_URL}/gfwlist.dnsmasq.conf",
+        "gfwlist.min.pac": "${BASE_URL}/gfwlist.min.pac",
+        "gfwlist.pac": "${BASE_URL}/gfwlist.pac",
+        "gfwlist.txt": "${BASE_URL}/gfwlist.txt",
+        "gfwlist.wingy.yml": "${BASE_URL}/gfwlist.wingy.yml"
+    },
+    "generator": "https://github.com/JinnLynn/genpac",
+    "env": {
+        "RUNNER_OS": "${RUNNER_OS}",
+        "RUNNER_ARCH": "${RUNNER_ARCH}"
+    },
+    "timestamp": "${TIMESTAMP_UTC}"
+}

@@ -24,6 +24,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v2
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -33,6 +36,16 @@ jobs:
         run: make requirements
       - name: Gen gfwlist.pac
         run: make genpac
+      - name: Write the meta info to index.json
+        env:
+          BASE_URL: ${{ steps.pages.outputs.base_url }}
+          AUTHOR_EMAIL: zhengjunyi@live.com
+          AUTHOR_URL: https://mogeko.me
+          LICENSE: MIT
+        run: |
+          export TIMESTAMP_UTC=$(date -u "+%Y-%m-%dT%H:%M:%SZ")
+          envsubst < ./public/index.json.template > ./public/index.json
+          rm -rf ./public/index.json.template
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
