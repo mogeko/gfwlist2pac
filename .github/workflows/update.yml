@@ -44,6 +44,7 @@ jobs:
           LICENSE: MIT
         run: |
           export TIMESTAMP_UTC=$(date -u "+%Y-%m-%dT%H:%M:%SZ")
+          export PYTHON_VERSION=$(echo ${pythonLocation} | cut -d '/' -f 5)
           envsubst < ./public/index.json.template > ./public/index.json
           rm -rf ./public/index.json.template
       - name: Upload artifact

@@ -17,6 +17,7 @@
     },
     "generator": "https://github.com/JinnLynn/genpac",
     "env": {
+        "PYTHON_VERSION": "${PYTHON_VERSION}",
         "RUNNER_OS": "${RUNNER_OS}",
         "RUNNER_ARCH": "${RUNNER_ARCH}"
     },
