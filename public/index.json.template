@@ -1,6 +1,5 @@
 {
     "homepage": "https://github.com/${GITHUB_REPOSITORY}",
-    "generator": "https://github.com/JinnLynn/genpac",
     "author": {
         "name": "${GITHUB_REPOSITORY_OWNER}",
         "email": "${AUTHOR_EMAIL}",
@@ -16,10 +15,10 @@
         "gfwlist.txt": "${BASE_URL}/gfwlist.txt",
         "gfwlist.wingy.yml": "${BASE_URL}/gfwlist.wingy.yml"
     },
+    "generator": "https://github.com/JinnLynn/genpac",
     "env": {
-        "runner_name": "${RUNNER_NAME}",
-        "runner_os": "${RUNNER_OS}",
-        "runner_arch": "${RUNNER_ARCH}"
+        "RUNNER_OS": "${RUNNER_OS}",
+        "RUNNER_ARCH": "${RUNNER_ARCH}"
     },
     "timestamp": "${TIMESTAMP_UTC}"
 }
