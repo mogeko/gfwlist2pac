@@ -48,7 +48,7 @@ jobs:
           envsubst < ./public/index.json.template > ./public/index.json
           rm -rf ./public/index.json.template
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./public
 
